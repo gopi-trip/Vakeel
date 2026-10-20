@@ -74,3 +74,18 @@ async def upload_contract(
         "contract" : contract_data.model_dump(),
         "contract_id": contract_data.id
     }
+
+@router.get("/")
+async def get_all_contracts():
+    """
+    List all the contracts
+    """
+    contracts = []
+    for doc in contracts_collection.find():
+        contract = Contract(**doc)
+        contract.id = str(doc["_id"])
+        contracts.append(contract.model_dump())
+
+    return {
+        "Contracts": contracts
+    }
