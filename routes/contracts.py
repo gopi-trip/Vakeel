@@ -1,8 +1,10 @@
 from email.policy import HTTP
+from genericpath import exists
+import uuid
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
 import os
-from app.config import ALLOWED_EXTENSIONS,MAX_ALLOWED_FILE_SIZE_MB
+from app.config import ALLOWED_EXTENSIONS,MAX_ALLOWED_FILE_SIZE_MB, UPLOAD_DIR
 router = APIRouter(
     prefix="/contracts",
     tags=["Contracts"]
@@ -33,3 +35,13 @@ async def upload_contract(
             status_code=413,
             detail="File size too large"
         )
+
+    # Save the file to a local directory
+    
+    os.makedirs(UPLOAD_DIR, exist_ok=True) # Make the directory if one doesn't exist
+    file_name = f"{uuid.uuid4().hex()}{ext}" # Give the file a unique name followed by its extension
+
+    file_path = os.path.join(UPLOAD_DIR,file_name) # Get a file path of the form UPLOAD_DIR + file_name
+
+    with open(file_path,"wb") as f:
+        f.write(content) # Write the read contents to the created file. 
