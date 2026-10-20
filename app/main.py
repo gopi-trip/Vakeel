@@ -1,10 +1,15 @@
 from fastapi import FastAPI
+from database import init_db
 
 app = FastAPI(
     title="Vakeel Contract API",
     description="AI Powered Contract Analysis using Gemini",
     version="0.1.0"
 )
+
+@app.on_event("startup")
+async def startup_event():
+    init_db()
 
 @app.get("/")
 async def  root():
