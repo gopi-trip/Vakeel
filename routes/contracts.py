@@ -1,6 +1,8 @@
+from email.policy import HTTP
+
 from fastapi import APIRouter, UploadFile, File, HTTPException
 import os
-from app.config import ALLOWED_EXTENSIONS
+from app.config import ALLOWED_EXTENSIONS,MAX_ALLOWED_FILE_SIZE_MB
 router = APIRouter(
     prefix="/contracts",
     tags=["Contracts"]
@@ -18,4 +20,16 @@ async def upload_contract(
         raise HTTPException(
             status_code=400,
             detail="File type not allowed"
+        )
+
+    content = await file.read()
+
+    # Check the file size
+
+    file_size = len(content)/1024*1024
+
+    if file_size > MAX_ALLOWED_FILE_SIZE_MB:
+        raise HTTPException(
+            status_code=413,
+            detail="File size too large"
         )
