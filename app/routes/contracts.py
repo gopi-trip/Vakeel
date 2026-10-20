@@ -25,6 +25,7 @@ async def upload_contract(
     Upload a PDF or a TXT file here
     """
     ext = os.path.splitext(file.filename)[1].lower() # Get the extension of the file
+
     if ext not in ALLOWED_EXTENSIONS:
         raise HTTPException(
             status_code=400,
@@ -35,7 +36,7 @@ async def upload_contract(
 
     # Check the file size
 
-    file_size = len(content)/1024*1024
+    file_size = len(content)/(1024*1024)
 
     if file_size > MAX_ALLOWED_FILE_SIZE_MB:
         raise HTTPException(
@@ -46,7 +47,8 @@ async def upload_contract(
     # Save the file to a local directory
     
     os.makedirs(UPLOAD_DIR, exist_ok=True) # Make the directory if one doesn't exist
-    file_name = f"{uuid.uuid4().hex()}{ext}" # Give the file a unique name followed by its extension
+
+    file_name = f"{uuid.uuid4().hex}{ext}" # Give the file a unique name followed by its extension
 
     file_path = os.path.join(UPLOAD_DIR,file_name) # Get a file path of the form UPLOAD_DIR + file_name
 
@@ -59,8 +61,8 @@ async def upload_contract(
         file_name=file_name,
         original_name=file.filename,
         text_content=parsed["text"] if isinstance(parsed,dict) else parsed,
-        page_count = int(parsed["page_count"].splitlines()) if isinstance(parsed,dict) else len(parsed.splitlines()),
-        word_count= int(parsed["word_count"].split()) if isinstance(parsed,dict) else len(parsed.split()),
+        page_count = int(parsed["page_count"]) if isinstance(parsed,dict) else len(parsed.splitlines()),
+        word_count= int(parsed["word_count"]) if isinstance(parsed,dict) else len(parsed.split()),
     )
 
     doc = contract_data.model_dump() #Convert Pydantic Object into a dictionary
