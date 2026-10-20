@@ -8,3 +8,5 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 ALLOWED_EXTENSIONS = [".pdf",".txt"]
 
 MAX_ALLOWED_FILE_SIZE_MB = 10
+
+UPLOAD_DIR = "uploads"
