@@ -1,0 +1,105 @@
+# NON-DISCLOSURE AGREEMENT (NDA)
+
+**Effective Date:** [DD/MM/YYYY]
+
+This Non-Disclosure Agreement (“Agreement”) is entered into on the Effective Date by and between:
+
+**Party A (Disclosing/Receiving Party):** [Full Legal Name / Company Name], having its registered address at [Address].
+
+**Party B (Disclosing/Receiving Party):** [Full Legal Name / Company Name], having its registered address at [Address].
+
+Party A and Party B are collectively referred to as the “Parties” and individually as a “Party.”
+
+## 1. Purpose
+
+The Parties wish to exchange certain confidential information for the purpose of evaluating a potential business relationship, collaboration, research project, or commercial engagement (“Purpose”).
+
+## 2. Definition of Confidential Information
+
+“Confidential Information” means all non-public information disclosed by either Party to the other, whether orally, visually, electronically, or in writing, including but not limited to:
+
+- Business plans, strategies, financial information, and trade secrets.
+- Software, source code, algorithms, models, and technical documentation.
+- Research data, experimental results, inventions, and product designs.
+- Customer information, supplier details, and business contacts.
+- Any other information identified as confidential or reasonably understood to be confidential given its nature and the circumstances of disclosure.
+
+## 3. Obligations of the Receiving Party
+
+Each Party receiving Confidential Information agrees to:
+
+a. Maintain the confidentiality of the information.
+
+b. Use the information solely for the Purpose stated in this Agreement.
+
+c. Not disclose the information to any third party without prior written consent from the disclosing Party, except as permitted under this Agreement.
+
+d. Protect the information using at least reasonable care and no less than the care used to protect its own confidential information.
+
+e. Restrict access to employees, contractors, professional advisers, or representatives who need the information for the Purpose and are bound by appropriate confidentiality obligations.
+
+f. Promptly notify the disclosing Party of any unauthorized access, use, or disclosure of which it becomes aware.
+
+## 4. Exclusions from Confidential Information
+
+The obligations under this Agreement do not apply to information that the receiving Party can demonstrate:
+
+a. Is or becomes publicly available through no breach of this Agreement.
+
+b. Was lawfully known to the receiving Party before disclosure.
+
+c. Is received lawfully from a third party without a confidentiality obligation.
+
+d. Is independently developed without using or referring to the Confidential Information.
+
+e. Must be disclosed under applicable law, regulation, or a valid order of a competent authority, subject to prior notice where legally permitted.
+
+## 5. Ownership and Intellectual Property
+
+All Confidential Information remains the property of the disclosing Party. Nothing in this Agreement grants either Party any licence, ownership interest, or other intellectual property rights, except the limited right to use the Confidential Information for the Purpose.
+
+Any intellectual property arising from a collaboration shall be governed by a separate written agreement, unless otherwise expressly agreed in writing by the Parties.
+
+## 6. Term and Duration of Confidentiality
+
+This Agreement shall commence on the Effective Date and remain in effect for **two (2) years**, unless terminated earlier by mutual written agreement.
+
+The confidentiality obligations shall continue for **three (3) years after the termination or expiry of this Agreement**. Information qualifying as a trade secret shall remain protected for as long as it retains trade-secret status under applicable law.
+
+## 7. Return or Destruction of Information
+
+Upon written request by the disclosing Party or upon termination of the Purpose, the receiving Party shall promptly return or destroy the Confidential Information, including copies, to the extent reasonably practicable.
+
+The receiving Party may retain copies where required by law or contained in routine backup systems, provided that any retained information remains subject to this Agreement.
+
+## 8. No Warranty
+
+Confidential Information is provided “as is.” Neither Party makes any representation or warranty regarding its accuracy or completeness unless expressly agreed in a separate written document.
+
+## 9. Remedies for Breach
+
+The Parties acknowledge that unauthorized disclosure or use of Confidential Information may cause harm that is difficult to quantify. The affected Party may seek remedies available under applicable law, including injunctive relief where appropriate, subject to the requirements of the competent court or authority.
+
+## 10. No Obligation to Proceed
+
+Nothing in this Agreement requires either Party to enter into a business relationship, transaction, employment arrangement, or further agreement.
+
+## 11. Governing Law and Jurisdiction
+
+This Agreement shall be governed by the laws of **[Specify Country and Applicable State/Region]**. The courts of **[Specify City and Jurisdiction]** shall have jurisdiction over disputes arising from this Agreement, subject to applicable law.
+
+## 12. General Provisions
+
+a. **Entire Agreement:** This Agreement constitutes the entire agreement between the Parties concerning its subject matter.
+
+b. **Amendments:** Any amendment must be in writing and signed by both Parties.
+
+c. **Severability:** If any provision is found unenforceable, the remaining provisions shall continue in effect to the extent permitted by law.
+
+d. **Assignment:** Neither Party may assign this Agreement without the other Party’s prior written consent, except as otherwise permitted by applicable law.
+
+e. **Counterparts and Electronic Signatures:** This Agreement may be signed in counterparts and electronically, to the extent permitted by applicable law.
+
+## 13. Signatures
+
+By signing below, the Parties acknowledge that they have read, understood, and agreed to the terms of this Agreement.
