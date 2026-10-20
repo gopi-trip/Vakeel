@@ -81,7 +81,7 @@ async def get_all_contracts():
     List all the contracts
     """
     contracts = []
-    for doc in contracts_collection.find():
+    for doc in contracts_collection.find({},{"text_content":0}):
         contract = Contract(**doc)
         contract.id = str(doc["_id"])
         contracts.append(contract.model_dump())
