@@ -1,10 +1,10 @@
 from enum import unique
 
 from pymongo import MongoClient
-from app.config import MONGODB_URI
+from config import MONGODB_URI
 
 client = MongoClient(MONGODB_URI)
-db = client.get_database()
+db = client["mydb"]
 
 #Create the collections
 contracts_collection = db["contracts"]
