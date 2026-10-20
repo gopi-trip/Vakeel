@@ -9,6 +9,9 @@ from opentelemetry.propagate import extract
 from config import ALLOWED_EXTENSIONS,MAX_ALLOWED_FILE_SIZE_MB, UPLOAD_DIR
 from service.document_parser import extract_text
 
+from models import Contract
+from database import contracts_collection
+
 router = APIRouter(
     prefix="/contracts",
     tags=["Contracts"]
@@ -51,3 +54,21 @@ async def upload_contract(
         f.write(content) # Write the read contents to the created file. 
 
     parsed = extract_text(file_path)
+
+    contract_data = Contract(
+        file_name=file_name,
+        original_name=file.filename,
+        text_content=parsed["text"] if isinstance(parsed,dict) else parsed,
+        page_count = int(parsed["page_count"].splitlines()) if isinstance(parsed,dict) else len(parsed.splitlines()),
+        word_count= int(parsed["word_count"].split()) if isinstance(parsed,dict) else len(parsed.split()),
+    )
+
+    doc = contract_data.model_dump() #Convert Pydantic Object into a dictionary
+    result = contracts_collection.insert_one(doc)
+    contract_data.id = str(result.inserted_id)
+
+    return {
+        "Message":"File Uploaded successfully",
+        "contract" : contract_data.model_dump(),
+        "contract_id": contract_data.id
+    }
