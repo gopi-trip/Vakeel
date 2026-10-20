@@ -1,5 +1,6 @@
 from email.policy import HTTP
 from genericpath import exists
+from unittest import async_case
 import uuid
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
@@ -88,4 +89,24 @@ async def get_all_contracts():
 
     return {
         "Contracts": contracts
+    }
+
+@router.get("/{contract_id}")
+async def get_contract_by_id(contract_id:str):
+
+    from bson import ObjectId
+    
+    doc = contracts_collection.find_one({"_id":ObjectId(contract_id)})
+
+    if not doc:
+        raise HTTPException(
+            status_code=404,
+            detail = f"A contract with the ID {contract_id} does not exist"
+        )
+
+    contract = Contract(**doc)
+    contract.id = str(doc["_id"])
+
+    return {
+        "Contract":contract.model_dump()
     }
