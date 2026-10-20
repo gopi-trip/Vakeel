@@ -10,13 +10,18 @@ def extract_text_from_pdf(file_path:str) -> dict:
     for page in reader.pages:
         text+=page.extract_text() + "\n"
 
-    return {"text":text.strip()}
+    return {"text":text.strip(), "page_count": str(len(reader.pages)), "word_count":str(len(text.split()))}
 
 
 def extract_text_from_txt(filepath: str) -> str:
 
     with open(filepath,"r", encoding="utf-8") as f:
-        return f.read()
+        text = f.read()
+    return {
+        "text":text.strip(),
+        "page_count": "1",
+        "word_count":str(len(text.split()))
+    }
 
 def extract_text(file_path:str) -> str:
     # Extract the file extension
